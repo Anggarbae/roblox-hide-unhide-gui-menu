@@ -1,0 +1,16 @@
+local button = script.Parent
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+local animationsGui = playerGui:WaitForChild("AnimationsGui")
+
+-- pastikan awalnya gui disembunyikan
+animationsGui.Enabled = false
+
+button.MouseButton1Click:Connect(function()
+    animationsGui.Enabled = not animationsGui.Enabled
+    if animationsGui.Enabled then
+        button.Text = "Close Animations"
+    else
+        button.Text = "Open Animations"
+    end
+end)
